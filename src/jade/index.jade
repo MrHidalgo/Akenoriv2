@@ -1,0 +1,14 @@
+include _mixin/mixin
+
+
+doctype html
+html(lang="en")
+
+
+    +headSite("AkenorI next level 3", linkSite.styleLink, "")
+
+
+    body
+
+        - for(var i = 0; i < linkSite.scriptLink.length; i++)
+            script(src= linkSite.scriptLink[i])
