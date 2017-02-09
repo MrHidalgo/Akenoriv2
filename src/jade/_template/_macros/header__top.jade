@@ -1,0 +1,29 @@
+include ../../_mixin/mixin
+
+-
+    var socialArr = [
+        "vk",
+        "fb"
+    ];
+
+.header__top
+    .container.clearfix
+
+        +socialBtn(socialArr, "header__top-social")
+
+        img(
+            src="./image/img-logotype.png"
+            title="logotype"
+            alt="logotype"
+            class="logotype__img logotype__img-js header__top-logotype img_responsive"
+        )
+
+        img(
+            src="./image/img-logotype-bg.png"
+            title="logotype background"
+            alt="logotype background"
+            class="logotype__img-bg header__top-logotype_bg img_responsive"
+        )
+
+        +btnMenuBurger("header__top-burger")
+

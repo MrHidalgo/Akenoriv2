@@ -40,9 +40,9 @@ exports.mainScriptTask = function (taskName) {
             .pipe(
                 plumber(plumberOption)
             )
-            .pipe(
-                changed(distFolder, changedOption)
-            )
+            // .pipe(
+            //     changed(distFolder, changedOption)
+            // )
             .pipe(
                 fixmyjs(fixmyjsOption)
             )

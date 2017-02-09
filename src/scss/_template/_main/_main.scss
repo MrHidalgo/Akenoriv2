@@ -10,7 +10,7 @@ $w-all              : return-value(dimension, all);
 
 $c-white            : return-value(color, white);
 
-//$PN_regular         : return-value(fonts, PN_regular);
+$PN_regular         : return-value(fonts, PN_regular);
 ///
 /// MAIN BLOCK
 ///
@@ -44,7 +44,7 @@ body{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	//font-family: $PN_regular;
+	font-family: $PN_regular;
 
 	background-color: $c-white;
 
