@@ -7,3 +7,39 @@ header.header
 
     include _macros/header__top
 
+    .container
+        .header__row.clearfix
+
+            //- triangle image left/right
+            img(
+                src="./image/img-triangle-small.png"
+                title=""
+                alt=""
+                class="header__img-triangle header__img-triangle_left"
+            )
+            img(
+                src="./image/img-triangle-small.png"
+                title=""
+                alt=""
+                class="header__img-triangle header__img-triangle_right"
+            )
+            //- END triangle image left/right
+
+            p.header__row-text!= "Снова</br>подаришь:"
+
+            .header__row-left
+                img(
+                    src="./image/img-header-girl.png"
+                    title=""
+                    alt=""
+                    class="header__img header__img-left img_responsive"
+                )
+
+            .header__row-right
+                img(
+                    src="./image/img-header-gift.png"
+                    title=""
+                    alt=""
+                    class="header__img header__img-right img_responsive"
+                )
+

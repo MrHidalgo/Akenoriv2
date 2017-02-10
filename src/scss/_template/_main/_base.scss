@@ -3,9 +3,63 @@
 ///
 @import "../../_mixin/mixin";
 @import "../../_function/function";
+@import "../../_variable/sprite";
 ///
 /// DECLARATION VARIABLE
 ///
 $w-all              : return-value(dimension, all);
 
 $c-white			      : return-value(color, white);
+$c-ruby  			      : return-value(color, ruby);
+$c-dodger-blue      : return-value(color, dodger-blue);
+
+$f-PN_black         : return-value(fonts, PN_black);
+///
+/// MAIN
+///
+.btn {
+	position: relative;
+	@include mixinDimensions(370px, 80px);
+	line-height: 80px;
+	border-radius: 3em;
+	box-shadow: 0 10px 37px 0 rgba(112, 11, 50, 0.3);
+	color: $c-white;
+	font: {
+		size: 25px;
+		family: $f-PN_black;
+	}
+	text-transform: uppercase;
+	text-align: center;
+
+
+	&__text {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(100% - 90px);
+	}
+
+
+	&__icon {
+		display: inline-block;
+		@include retina-sprite($sp-i-btn-arrow-group);
+
+
+		&-wrap {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 90px;
+		}
+	}
+
+
+	&_ruby {
+		background-color: $c-ruby;
+	}
+
+
+	&_blue {
+		background-color: $c-dodger-blue;
+	}
+}

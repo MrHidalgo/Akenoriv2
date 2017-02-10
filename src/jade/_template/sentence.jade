@@ -1,0 +1,50 @@
+include ../_mixin/macrosMixin
+
+
+-
+    var sentenceTitle = "<span class='sentence__title-1_bold'>Хватит дарить</span> своему мужчине" +
+    "</br><span class='sentence__title-1_bold'>ерунду! Подари</span> наконец-то " +
+    "</br><span class='sentence__title-1_bold'>нечто стоящее!</span>";
+
+
+section.sentence
+
+    .sentence__row.sentence__row_ruby
+        .sentence__skew
+
+        .container.clearfix
+            img(
+                src="./image/img-sentence-0.png"
+                title=""
+                alt=""
+                class="sentence__img sentence__img-0 img_responsive"
+            )
+
+            p.sentence__title-0!= "Максимум –</br>ручку или запонки?"
+
+            //- triangle big
+            img(
+                src="./image/img-triangle-big.png"
+                title=""
+                alt=""
+                class="sentence__img-triangle"
+            )
+            //- END triangle big
+
+    .sentence__row.sentence__row_blue
+        .sentence__skew
+
+        .container
+
+            //- img register
+            img(
+                src="./image/img-sentence-1.png"
+                title=""
+                alt=""
+                class="sentence__img-register"
+            )
+            //- END img register
+
+            p.sentence__title-1!= sentenceTitle
+
+            +btn("sentence__btn", "btn_ruby", "Подробнее")

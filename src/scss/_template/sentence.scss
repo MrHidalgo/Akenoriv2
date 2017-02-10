@@ -1,0 +1,141 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			      : return-value(color, white);
+$c-ruby  			      : return-value(color, ruby);
+$c-dodger-blue      : return-value(color, dodger-blue);
+
+$f-PN_light         : return-value(fonts, PN_light);
+$f-PN_black         : return-value(fonts, PN_black);
+///
+/// MAIN
+///
+.sentence {
+
+
+	&__row {
+		position: relative;
+		min-height: 320px;
+		@include respond-to(medium) {
+			min-height: 270px;
+		}
+
+
+		&_ruby {
+			z-index: 10;
+
+
+			.sentence__skew {
+				top: 75px;
+				transform: skewY(4deg);
+				background-color: $c-ruby;
+			}
+		}
+
+
+		&_blue {
+			z-index: 15;
+
+
+			.sentence__skew {
+				top: -65px;
+				z-index: 15;
+				transform: skewY(-4deg);
+				background-color: $c-dodger-blue;
+			}
+		}
+	}
+
+
+	&__skew {
+		position: absolute;
+		@include mixinDimensions($w-all);
+		left: 0;
+		top: 0;
+	}
+
+
+	&__img {
+
+
+		&-triangle {
+			position: absolute;
+			top: 30px;
+			right: -30px;
+		}
+
+
+		&-register {
+			position: absolute;
+			z-index: 0;
+			right: 0;
+		}
+
+
+		&-0 {
+			float: left;
+		}
+	}
+
+
+	&__title {
+		&-0 {
+			float: left;
+			margin: {
+				top: 130px;
+				left: -50px;
+			}
+			font: {
+				family: $f-PN_black;
+			}
+			line-height: 1;
+			transform: rotate(3deg);
+		}
+
+
+		&-1 {
+			position: relative;
+			z-index: 15;
+			font: {
+				family: $f-PN_light;
+			}
+			line-height: 1.1;
+			transform: rotate(-4.2deg);
+
+
+			&_bold {
+				font: {
+					family: $f-PN_black;
+				}
+			}
+		}
+
+
+		&-0,
+		&-1 {
+			font-size: 55px;
+			color: $c-white;
+			@include respond-to(medium) {
+				font-size: 35px;
+			}
+		}
+	}
+
+
+	&__btn {
+		position: absolute;
+		right: 300px;
+		bottom: -100px;
+		z-index: 15;
+		@include respond-to(medium-max) {
+			right: 15px;
+		}
+	}
+}

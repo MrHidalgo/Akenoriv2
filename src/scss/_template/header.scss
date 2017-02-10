@@ -15,7 +15,68 @@
 $w-all              : return-value(dimension, all);
 
 $c-white			      : return-value(color, white);
+$c-ruby 			      : return-value(color, ruby);
+
+$f-PN_black         : return-value(fonts, PN_black);
 ///
 /// MAIN
 ///
-.header {}
+.header {
+	overflow: hidden;
+	padding-bottom: 100px;
+
+
+	&__row {
+		position: relative;
+		padding-top: 100px;
+
+
+		&-text {
+			position: absolute;
+			top: 120px;
+			left: 35%;
+			font: {
+				size: 55px;
+				family: $f-PN_black;
+			}
+			color: $c-ruby;
+			text-transform: uppercase;
+			line-height: 1;
+			transform: rotate(-10deg);
+			@include respond-to(medium) {
+				font-size: 40px;
+			}
+		}
+
+
+		&-left {
+			float: left;
+			width: 35%;
+		}
+
+
+		&-right {
+			float: right;
+			width: 65%;
+		}
+	}
+
+
+	&__img {
+		&-triangle {
+			position: absolute;
+
+
+			&_left {
+				top: 100px;
+				left: -100px;
+			}
+
+
+			&_right {
+				top: 300px;
+				right: -100px;
+			}
+		}
+	}
+}
