@@ -365,216 +365,131 @@ input[type="radio"] {
 }
 
 
-.list__row {
+.advantages {
   position: relative;
-  min-height: 450px;
+  max-height: 670px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 
-.list__row-0 .list__number {
-  top: 20px;
-  left: 400px;
+.advantages__left {
+  left: 0;
 }
 
 
-.list__row-0 .list__img {
-  top: 50px;
-  left: 150px;
+.advantages__right {
+  right: 0;
 }
 
 
-.list__row-0 .list__wrap {
-  padding-top: 150px;
+.advantages__left, .advantages__right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
 }
 
 
-.list__row-1 .list__number {
-  top: -70px;
-  left: 15px;
+.advantages__img {
+  float: right;
+  position: relative;
+  left: 100px;
 }
 
 
-.list__row-1 .list_skew {
-  overflow: hidden;
+.advantages__row-right {
+  padding-left: 100px;
 }
 
 
-.list__row-1 .list__img {
-  top: -50px;
-  right: 150px;
+.advantages__row-left, .advantages__row-right {
+  float: right;
+  width: 50%;
 }
 
 
-.list__row-1 .list__wrap {
-  padding-top: 60px;
+.advantages__logotype-0 {
+  background-image: url(../image/sprite.png);
+  background-position: 0px -91px;
+  width: 92px;
+  height: 15px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .advantages__logotype-0 {
+    background-image: url(../image/sprite@2x.png);
+    -webkit-background-size: 185px 129px;
+            background-size: 185px 129px;
+  }
 }
 
 
-.list__row-2 .list__number {
-  top: -100px;
-  left: 400px;
-  color: #fff;
+.advantages__logotype-1 {
+  background-image: url(../image/sprite.png);
+  background-position: 0px 0px;
+  width: 185px;
+  height: 86px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .advantages__logotype-1 {
+    background-image: url(../image/sprite@2x.png);
+    -webkit-background-size: 185px 129px;
+            background-size: 185px 129px;
+  }
 }
 
 
-.list__row-2 .list__img {
-  left: 450px;
+.advantages__logotype-0, .advantages__logotype-1 {
+  display: block;
+  margin-bottom: 15px;
 }
 
 
-.list__row-2 .list__title,
-.list__row-2 .list__text {
+.advantages__title {
+  font-size: 25px;
+  font-family: "Proxima Nova Black";
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+
+.advantages__list {
+  padding-left: 100px;
+  padding-top: 30px;
+}
+
+
+.advantages__list-item {
+  margin-bottom: 30px;
+}
+
+
+.advantages__list-icon {
+  margin-right: 10px;
+}
+
+
+.advantages__list-text {
+  font-size: 18px;
   color: #222;
 }
 
 
-.list__row-2 .list__wrap {
-  padding-top: 40px;
+.advantages__list-icon, .advantages__list-text {
+  display: inline-block;
+  vertical-align: top;
 }
 
 
-.list__row-3 .list__number {
-  top: -10px;
-  left: 15px;
-}
-
-
-.list__row-3 .list_skew {
-  overflow: hidden;
-}
-
-
-.list__row-3 .list__img {
-  top: -50px;
-  right: 100px;
-}
-
-
-.list__row-3 .list__wrap {
-  padding-top: 120px;
-}
-
-
-.list__row-4 .list__number {
-  top: -100px;
-  left: 400px;
-}
-
-
-.list__row-4 .list_skew {
-  overflow: hidden;
-}
-
-
-.list__row-4 .list__img {
-  left: 300px;
-}
-
-
-.list__row-4 .list__wrap {
-  padding-top: 50px;
-}
-
-
-.list__row-0 .list__wrap, .list__row-2 .list__wrap, .list__row-4 .list__wrap {
-  position: relative;
-  left: 400px;
-}
-
-
-.list__row-1, .list__row-2, .list__row-4 {
-  min-height: 400px;
-}
-
-
-.list__row_ruby .list__number {
-  color: #e61e6c;
-}
-
-
-.list__row_ruby .list_skew {
-  top: 75px;
-  -webkit-transform: skewY(4deg);
-      -ms-transform: skewY(4deg);
-          transform: skewY(4deg);
-  background-color: #e61e6c;
-}
-
-
-.list__row_blue .list__number {
-  color: #368de6;
-}
-
-
-.list__row_blue .list_skew {
-  top: -65px;
-  -webkit-transform: skewY(-4deg);
-      -ms-transform: skewY(-4deg);
-          transform: skewY(-4deg);
-  background-color: #368de6;
-}
-
-
-.list__row_white {
-  min-height: 250px;
-}
-
-
-.list__row_white .list__number {
-  color: #fff;
-}
-
-
-.list__row_white .list_skew {
-  -webkit-transform: skewY(-4deg);
-      -ms-transform: skewY(-4deg);
-          transform: skewY(-4deg);
-  background-color: #fff;
-}
-
-
-.list_skew {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  bottom: 0;
-}
-
-
-.list__number {
-  position: absolute;
-  top: 0;
-  z-index: 100;
-  font-size: 65px;
-  font-family: "Proxima Nova Black";
-  line-height: 1;
-}
-
-
-.list__img {
-  position: absolute;
-  z-index: 15;
-  float: left;
-}
-
-
-.list__title {
-  font-size: 35px;
-  font-family: "Proxima Nova Bold";
-  line-height: 1.2;
-  padding-bottom: 40px;
-}
-
-
-.list__text {
-  font-size: 18px;
-}
-
-
-.list__title, .list__text {
-  width: 60%;
-  color: #fff;
+.advantages__btn {
+  display: block;
 }
 
 

@@ -1,0 +1,133 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			: return-value(color, white);
+$c-nero				: return-value(color, nero);
+
+$f-PN_black         : return-value(fonts, PN_black);
+///
+/// MAIN
+///
+.advantages {
+	position: relative;
+	max-height: 670px;
+	margin: {
+		top: 50px;
+		bottom: 100px;
+	};
+
+
+	&__left {
+		left: 0;
+	}
+
+
+	&__right {
+		right: 0;
+	}
+
+
+	&__left,
+	&__right {
+		position: absolute;
+		top: 0;
+		@include mixinDimensions(50%, 100%);
+	}
+
+
+	&__img {
+		float: right;
+		position: relative;
+		left: 100px;
+	}
+
+
+	&__row {
+		&-right {
+			padding-left: 100px;
+		}
+
+
+		&-left,
+		&-right {
+			float: right;
+			width: 50%;
+		}
+	}
+
+
+	&__logotype {
+		&-0 {
+			@include retina-sprite($sp-img-logotype-car-1-group);
+		}
+
+
+		&-1 {
+			@include retina-sprite($sp-img-logotype-car-0-group);
+		}
+
+
+		&-0,
+		&-1 {
+			display: block;
+			margin-bottom: 15px;
+		}
+	}
+
+
+	&__title {
+		font: {
+			size: 25px;
+			family: $f-PN_black;
+		}
+		color: $c-nero;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		line-height: 1;
+		margin-bottom: 15px;
+	}
+
+
+	&__list {
+		padding: {
+			left: 100px;
+			top: 30px;
+		}
+
+
+		&-item {
+			margin-bottom: 30px;
+		}
+
+
+		&-icon {
+			margin-right: 10px;
+		}
+
+
+		&-text {
+			font-size: 18px;
+			color: $c-nero;
+		}
+
+
+		&-icon,
+		&-text {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+
+	&__btn {
+		display: block;
+	}
+}

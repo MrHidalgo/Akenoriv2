@@ -1,0 +1,39 @@
+include ../_mixin/macrosMixin
+
+section.advantages
+
+    .advantages__left.clearfix
+        img(
+            src="./image/img-advantages.png"
+            alt=""
+            title=""
+            class="img_responsive advantages__img"
+        )
+    .advantages__right
+
+    .container-fluid
+        .advantages__row.clearfix
+
+            .advantages__row-left
+            .advantages__row-right
+
+                i.advantages__logotype-0
+                i.advantages__logotype-1
+
+                p.advantages__title!= "идельный подарок, если:"
+
+                ul.advantages__list
+                    li.advantages__list-item
+                        i.advantages__list-icon
+                        span.advantages__list-text!= "Ваш мужчина любит машины"
+
+                    li.advantages__list-item
+                        i.advantages__list-icon
+                        span.advantages__list-text!= "Он водит внедорожник, кроссовер или модель,</br>похожую на джип"
+
+                    li.advantages__list-item
+                        i.advantages__list-icon
+                        span.advantages__list-text!= "Вам надоело дарить ерунду и хочется, чтобы</br>в этот раз подарок оценили по достоинству"
+
+                    li.advantages__list-item
+                        +btn("advantages__btn", "btn_blue", "Купить")
