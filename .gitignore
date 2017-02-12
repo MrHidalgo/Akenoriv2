@@ -1,5 +1,7 @@
 .idea/*
 node_modules/*
+.gulp/*
+src/image/*
 
 *.zip
 *.iml

@@ -1,0 +1,21 @@
+-
+    var carText = "Самый современный</br>видеорегистратор в мире,</br>созданный специально для</br>внедорожников и кросс-оверов.";
+
+
+section.car
+    .container.clearfix
+        .car__left
+            i.car__logotype-0
+            i.car__logotype-1
+
+            hr.car__line
+
+            p.car__text!= carText
+
+        .car__right
+            img(
+                src="./image/img-car.png"
+                alt=""
+                title=""
+                class="img_responsive car__img"
+            )

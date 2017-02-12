@@ -1,0 +1,95 @@
+-
+    var listTitle = [
+        "Инновационный дизайн",
+        "Максимальное качество</br>сьемки – даже ночью",
+        "Органично смотрится в салоне",
+        "3 в 1 – видеогистратор, GPS и антирадар",
+        "Впервые – управление со смартфона"
+    ];
+
+    var listText = [
+        "AKENORI выглядит как устройство из будущего. Стильное, современное, статусное – ваш мужчина с первого взгляда поймет, что вы дарите ему достойную вещь.",
+        "Внутри AKENORI – новейшая камера от японского производителя Sony. Качественные комплектующие вместе с уникальной запатентованной технологией Dark Room обеспечивают настоящее FULL HD видео и днем, и ночью",
+        "Из-за громоздких креплений и экранов регистраторы часто превращают стильный салон в безвкусицу. Дизайнеры AKENORI уделили особое внимание этому вопросу. Благодаря своей конструкции и креплению, AKENORI органично внедряется в любой интерьер и незаметно делает свою работу.",
+        "AKENORI NX01 – не просто регистратор. Это инновационное устройство для автолюбителя. AKENORI работает также как GPS, фиксируя все подробности поездки, и антирадар, который оповещает про приближающиеся камеры фиксации скорости и помогает экономить на штрафах.",
+        "AKENORI – первое устройство для авто в мире, которым можно управлять прямо со смартфона. Поменять настройки, посмотреть видео или скинуть нужную съемку прямо с телефона на почту или в соцсети – теперь это все можно сделать в несколько кликов через приложение."
+    ];
+
+
+section.list
+    .list__row.list__row-0.list__row_ruby
+        img(
+            src="./image/img-list-0.png"
+            alt=""
+            title=""
+            class="img_responsive list__img"
+        )
+
+        .list_skew
+
+        .container.clearfix
+            p.list__number!= "01"
+
+            .list__wrap
+                p.list__title!= listTitle[0]
+                p.list__text!= listText[0]
+
+    .list__row.list__row-1.list__row_blue
+        .list_skew
+            img(
+                src="./image/img-list-1.png"
+                alt=""
+                title=""
+                class="img_responsive list__img"
+            )
+
+        .container
+            p.list__number!= "02"
+            .list__wrap
+                p.list__title!= listTitle[1]
+                p.list__text!= listText[1]
+
+    .list__row.list__row-2.list__row_white
+        .list_skew
+            img(
+                src="./image/img-list-2.png"
+                alt=""
+                title=""
+                class="img_responsive list__img"
+            )
+
+        .container
+            p.list__number!= "03"
+            .list__wrap
+                p.list__title!= listTitle[2]
+                p.list__text!= listText[2]
+
+    .list__row.list__row-3.list__row_ruby
+        .list_skew
+            img(
+                src="./image/img-list-3.png"
+                alt=""
+                title=""
+                class="img_responsive list__img"
+            )
+
+        .container
+            p.list__number!= "04"
+            .list__wrap
+                p.list__title!= listTitle[3]
+                p.list__text!= listText[3]
+
+    .list__row.list__row-4.list__row_blue
+        .list_skew
+            img(
+                src="./image/img-list-4.png"
+                alt=""
+                title=""
+                class="img_responsive list__img"
+            )
+
+        .container
+            p.list__number!= "05"
+            .list__wrap
+                p.list__title!= listTitle[4]
+                p.list__text!= listText[4]
