@@ -1,0 +1,83 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite";
+///
+/// DECLARATION VARIABLE
+///
+$w-all          : return-value(dimension, all);
+
+$c-white			  : return-value(color, white);
+$c-ruby 			  : return-value(color, ruby);
+$c-dodger-blue  : return-value(color, dodger-blue);
+///
+/// MAIN
+///
+.video {
+	padding: {
+		top: 30px;
+		bottom: 30px;
+	};
+
+
+	.main__title {
+		float: left;
+	}
+
+
+	&__row {
+		position: relative;
+		min-height: 500px;
+
+
+		&-0 {
+			.video_skew {
+				background-color: $c-ruby;
+				bottom: -85px;
+				transform: skewY(4deg);
+			}
+
+
+			.video__wrap {
+				float: left;
+				margin-right: 50px;
+			}
+		}
+
+
+		&-1 {
+			.video_skew {
+				background-color: $c-dodger-blue;
+				top: -50px;
+				transform: skewY(-4deg);
+			}
+
+
+			.video__wrap {
+				float: right;
+				margin-left: 50px;
+			}
+		}
+	}
+
+
+	&_skew {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		@include mixinDimensions($w-all, 400px);
+	}
+
+
+	&__wrap {
+		position: relative;
+		@include mixinDimensions(650px, 390px);
+
+
+		iframe {
+			@include mixinDimensions($w-all);
+		}
+	}
+}

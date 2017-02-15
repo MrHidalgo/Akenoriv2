@@ -28,7 +28,7 @@
 .btn__icon {
   display: inline-block;
   background-image: url(../image/sprite.png);
-  background-position: 0px -111px;
+  background-position: 0px -151px;
   width: 10px;
   height: 18px;
 }
@@ -37,8 +37,8 @@
   
   .btn__icon {
     background-image: url(../image/sprite@2x.png);
-    -webkit-background-size: 185px 129px;
-            background-size: 185px 129px;
+    -webkit-background-size: 185px 169px;
+            background-size: 185px 169px;
   }
 }
 
@@ -58,6 +58,29 @@
 
 .btn_blue {
   background-color: #368de6;
+}
+
+
+.main__title {
+  position: relative;
+  font-size: 35px;
+  font-family: "Proxima Nova Black";
+  color: #222;
+  line-height: 1.2;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding-top: 50px;
+}
+
+
+.main__title:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background-color: #e61e6c;
+  top: 23px;
+  left: 0;
 }
 
 
@@ -365,131 +388,72 @@ input[type="radio"] {
 }
 
 
-.advantages {
-  position: relative;
-  max-height: 670px;
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
-
-
-.advantages__left {
-  left: 0;
-}
-
-
-.advantages__right {
-  right: 0;
-}
-
-
-.advantages__left, .advantages__right {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-}
-
-
-.advantages__img {
-  float: right;
-  position: relative;
-  left: 100px;
-}
-
-
-.advantages__row-right {
-  padding-left: 100px;
-}
-
-
-.advantages__row-left, .advantages__row-right {
-  float: right;
-  width: 50%;
-}
-
-
-.advantages__logotype-0 {
-  background-image: url(../image/sprite.png);
-  background-position: 0px -91px;
-  width: 92px;
-  height: 15px;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  
-  .advantages__logotype-0 {
-    background-image: url(../image/sprite@2x.png);
-    -webkit-background-size: 185px 129px;
-            background-size: 185px 129px;
-  }
-}
-
-
-.advantages__logotype-1 {
-  background-image: url(../image/sprite.png);
-  background-position: 0px 0px;
-  width: 185px;
-  height: 86px;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  
-  .advantages__logotype-1 {
-    background-image: url(../image/sprite@2x.png);
-    -webkit-background-size: 185px 129px;
-            background-size: 185px 129px;
-  }
-}
-
-
-.advantages__logotype-0, .advantages__logotype-1 {
-  display: block;
-  margin-bottom: 15px;
-}
-
-
-.advantages__title {
-  font-size: 25px;
-  font-family: "Proxima Nova Black";
-  color: #222;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 1;
-  margin-bottom: 15px;
-}
-
-
-.advantages__list {
-  padding-left: 100px;
+.video {
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 
-.advantages__list-item {
-  margin-bottom: 30px;
+.video .main__title {
+  float: left;
 }
 
 
-.advantages__list-icon {
-  margin-right: 10px;
+.video__row {
+  position: relative;
+  min-height: 500px;
 }
 
 
-.advantages__list-text {
-  font-size: 18px;
-  color: #222;
+.video__row-0 .video_skew {
+  background-color: #e61e6c;
+  bottom: -85px;
+  -webkit-transform: skewY(4deg);
+      -ms-transform: skewY(4deg);
+          transform: skewY(4deg);
 }
 
 
-.advantages__list-icon, .advantages__list-text {
-  display: inline-block;
-  vertical-align: top;
+.video__row-0 .video__wrap {
+  float: left;
+  margin-right: 50px;
 }
 
 
-.advantages__btn {
-  display: block;
+.video__row-1 .video_skew {
+  background-color: #368de6;
+  top: -50px;
+  -webkit-transform: skewY(-4deg);
+      -ms-transform: skewY(-4deg);
+          transform: skewY(-4deg);
+}
+
+
+.video__row-1 .video__wrap {
+  float: right;
+  margin-left: 50px;
+}
+
+
+.video_skew {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+}
+
+
+.video__wrap {
+  position: relative;
+  width: 650px;
+  height: 390px;
+}
+
+
+.video__wrap iframe {
+  width: 100%;
+  height: 100%;
 }
 
 

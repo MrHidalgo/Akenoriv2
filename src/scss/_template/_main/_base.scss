@@ -9,8 +9,9 @@
 ///
 $w-all              : return-value(dimension, all);
 
-$c-white			: return-value(color, white);
-$c-ruby  			: return-value(color, ruby);
+$c-white			      : return-value(color, white);
+$c-nero 			      : return-value(color, nero);
+$c-ruby  			      : return-value(color, ruby);
 $c-dodger-blue      : return-value(color, dodger-blue);
 
 $f-PN_black         : return-value(fonts, PN_black);
@@ -61,5 +62,29 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 	&_blue {
 		background-color: $c-dodger-blue;
+	}
+}
+
+
+.main__title {
+	position: relative;
+	font: {
+		size: 35px;
+		family: $f-PN_black;
+	}
+	color: $c-nero;
+	line-height: 1.2;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	padding-top: 50px;
+
+
+	&:before {
+		content: "";
+		position: absolute;
+		@include mixinDimensions(100px, 4px);
+		background-color: $c-ruby;
+		top: 23px;
+		left: 0;
 	}
 }

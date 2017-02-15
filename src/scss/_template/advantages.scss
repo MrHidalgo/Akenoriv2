@@ -109,7 +109,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 
 		&-icon {
-			margin-right: 10px;
+			position: relative;
+			top: 5px;
+			margin-right: 20px;
+			@include retina-sprite($sp-i-list-group);
 		}
 
 
