@@ -17,13 +17,15 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 ///
 .video {
 	padding: {
-		top: 30px;
+		top: 100px;
 		bottom: 30px;
 	};
 
 
 	.main__title {
 		float: left;
+
+		padding-bottom: 100px;
 	}
 
 
@@ -41,8 +43,14 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 
 
 			.video__wrap {
-				float: left;
-				margin-right: 50px;
+				&-1 {
+					padding-left: 50px;
+				}
+
+				&-0,
+				&-1 {
+					float: left;
+				}
 			}
 		}
 
@@ -56,10 +64,19 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 
 
 			.video__wrap {
-				float: right;
-				margin-left: 50px;
+				&-1 {
+					padding-right: 50px;
+				}
+
+				&-0,
+				&-1 {
+					float: right;
+				}
 			}
 		}
+
+
+
 	}
 
 
@@ -72,12 +89,64 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 
 
 	&__wrap {
-		position: relative;
-		@include mixinDimensions(650px, 390px);
+		&-0 {
+			position: relative;
+			@include mixinDimensions(650px, 390px);
 
-
-		iframe {
-			@include mixinDimensions($w-all);
+			iframe {
+				@include mixinDimensions($w-all);
+			}
 		}
+
+
+		&-1 {
+			width: calc(100% - 650px);
+		}
+	}
+
+
+	&__text {
+		font-size: 20px;
+		color: $c-white;
+		padding-top: 100px;
+
+
+		&-wrap {
+			display: inline-block;
+		}
+
+
+		&-0 {
+			&::before {
+				margin-right: 10px;
+				@include retina-sprite($sp-i-video-arrow-0-group);
+			}
+		}
+		&-1 {
+			float: right;
+
+
+			&::after {
+				margin-left: 10px;
+				@include retina-sprite($sp-i-video-arrow-1-group);
+			}
+		}
+
+
+		&-0,
+		&-1 {
+			&::before,
+			&::after {
+				content: "";
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+	}
+
+
+	&__btn {
+		display: block;
+		margin-top: 40px;
 	}
 }

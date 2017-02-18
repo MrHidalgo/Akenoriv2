@@ -1,0 +1,39 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			: return-value(color, white);
+///
+/// MAIN
+///
+.footer {
+  position: absolute;
+  z-index: 15;
+  height: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: {
+    left: auto;
+    right: auto;
+  };
+
+
+  &__img {
+    float: left;
+    margin-top: 35px;
+  }
+
+
+  &__social {
+    float: right;
+    margin-top: 25px;
+  }
+}

@@ -1,0 +1,114 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			: return-value(color, white);
+$c-nero 			: return-value(color, nero);
+$c-ruby 			: return-value(color, ruby);
+$c-dodger-blue		: return-value(color, dodger-blue);
+///
+/// MAIN
+///
+.delivery {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 250px;
+
+
+  &__row {
+    position: relative;
+
+
+    &-left,
+    &-right {
+      position: relative;
+      float: left;
+      width: 50%;
+    }
+  }
+
+
+  &__img {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+  }
+
+
+  &__btn {
+    position: relative;
+    z-index: 10;
+    display: block;
+    margin-top: 100px;
+  }
+
+
+  &__list {
+    padding: {
+      top: 50px;
+    }
+
+
+    &-item {
+      margin-bottom: 30px;
+    }
+
+
+    &-icon {
+      position: relative;
+      top: 5px;
+      margin-right: 20px;
+      @include retina-sprite($sp-i-list-group);
+    }
+
+
+    &-text {
+      font-size: 18px;
+      color: $c-nero;
+    }
+
+
+    &-icon,
+    &-text {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+
+  &_skew {
+    position: absolute;
+    z-index: 1;
+    width: $w-all;
+    left: 0;
+    bottom: 0;
+
+
+    &-0 {
+      height: 250px;
+      bottom: 20px;
+      background-color: $c-ruby;
+      transform: skewY(3deg);
+    }
+    &-1 {
+      z-index: 1;
+      height: 110px;
+      bottom: 30px;
+      background-color: $c-dodger-blue;
+      transform: skewY(-3deg);
+    }
+    &-2 {
+      height: 80px;
+      background-color: $c-white;
+    }
+  }
+}

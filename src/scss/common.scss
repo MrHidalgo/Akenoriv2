@@ -4,9 +4,12 @@
 @import "_template/_main/_main";
 
 /// MAIN TMPL
-//@import "_template/header";
-//@import "_template/sentence";
-//@import "_template/car";
-//@import "_template/list";
-//@import "_template/advantages";
+@import "_template/header";
+@import "_template/sentence";
+@import "_template/car";
+@import "_template/list";
+@import "_template/advantages";
 @import "_template/video";
+@import "_template/more";
+@import "_template/delivery";
+@import "_template/footer";

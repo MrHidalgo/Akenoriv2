@@ -1,0 +1,420 @@
+///
+/// IMPORT FILES
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			: return-value(color, white);
+$c-nero 			: return-value(color, nero);
+$c-ruby  			: return-value(color, ruby);
+
+$f-PN_black         : return-value(fonts, PN_black);
+$f-PN_bold          : return-value(fonts, PN_bold);
+///
+/// MAIN
+///
+.more {
+  position: relative;
+  padding-bottom: 50px;
+  margin-bottom: 15px;
+
+
+  &_skew {
+    position: absolute;
+    z-index: 0;
+    @include mixinDimensions($w-all, 250px);
+    left: 0;
+    bottom: 0;
+    transform: skewY(1deg);
+    background-color: $c-ruby;
+  }
+
+
+  &__row {
+    padding-bottom: 50px;
+
+
+    &_right {
+      padding-top: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    &_left,
+    &_right {
+      float: left;
+      width: 50%;
+    }
+  }
+
+
+  &__btn {
+    position: relative;
+    font: {
+      size: 20px;
+      family: $f-PN_black;
+    }
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: lighten($c-nero, 30%);
+    transition: all .3s ease-in-out;
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      @include mixinDimensions($w-all, 4px);
+      left: 0;
+      bottom: -10px;
+      transition: all .3s ease-in-out;
+    }
+
+
+    &.active {
+      color: $c-nero;
+      transition: all .3s ease-in-out;
+
+
+      &:after {
+        background-color: $c-ruby;
+      }
+    }
+  }
+
+
+  &__carousel {
+    //margin-top: 80px;
+
+
+    &-device {
+      .more {
+        &__item {
+          &-0 {
+            max-width: 587px;
+
+
+            .more__item-text {
+              &-0 {
+                top: 30px;
+                left: 10px;
+                @include respond-to(small-max) {
+                  top: 0;
+                  left: 0;
+                }
+              }
+              &-1 {
+                top: 40px;
+                right: -10px;
+                @include respond-to(medium-max) {
+                  right: 0;
+                }
+                @include respond-to(small-max) {
+                  top: 0;
+                  right: 0;
+                }
+              }
+              &-2 {
+                bottom: 110px;
+                left: -70px;
+                @include respond-to(medium-max) {
+                  bottom: 0;
+                  left: 0;
+                }
+              }
+              &-3 {
+                bottom: 70px;
+                right: -150px;
+                @include respond-to(medium-max) {
+                  bottom: 0;
+                  right: 0;
+                }
+              }
+            }
+          }
+          &-1 {
+            max-width: 729px;
+
+
+            .more__item-text {
+              &-0 {
+                bottom: 70px;
+                left: -50px;
+                @include respond-to(medium-max) {
+                  left: 0;
+                  bottom: 100px;
+                }
+                @include respond-to(small-max) {
+                  bottom: 0;
+                  left: 0;
+                }
+              }
+              &-1 {
+                top: 0;
+                right: 0;
+              }
+              &-2 {
+                bottom: 70px;
+                right: -50px;
+                @include respond-to(medium-max) {
+                  right: 0;
+                  bottom: 120px;
+                }
+                @include respond-to(small-max) {
+                  right: 0;
+                  bottom: 0;
+                }
+              }
+            }
+          }
+          &-2 {
+            max-width: 660px;
+
+
+            .more__item-text {
+              &-0 {
+                bottom: 190px;
+                left: 0;
+                @include respond-to(small-max) {
+                  top: 0;
+                  bottom: auto;
+                }
+              }
+            }
+          }
+          &-3 {
+            max-width: 696px;
+
+
+            .more__item-text {
+              &-0 {
+                bottom: 170px;
+                left: -30px;
+                @include respond-to(medium-max) {
+                  left: 0;
+                  bottom: 200px;
+                }
+                @include respond-to(small-max) {
+                  left: 0;
+                  top: 0;
+                  bottom: auto;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    &-kit {
+      margin-top: 0;
+
+
+      .more {
+        &__item {
+          &-0 {
+            max-width: 784px;
+          }
+          &-1 {
+            max-width: 195px;
+
+
+            .more__item-text {
+              &-0 {
+                top: 0;
+                left: 40px;
+              }
+            }
+          }
+          &-2 {
+            max-width: 366px;
+
+
+            .more__item-text {
+              &-0 {
+                bottom: 0;
+                left: 0;
+              }
+            }
+          }
+          &-3 {
+            max-width: 270px;
+
+
+            .more__item-text {
+              &-0 {
+                top: 0;
+                left: 20px;
+                text-align: left;
+              }
+            }
+          }
+          &-4 {
+            max-width: 259px;
+
+
+            .more__item-text {
+              &-0 {
+                top: 40px;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  &__item {
+    position: relative;
+    text-align: center;
+    margin: {
+      left: auto;
+      right: auto;
+    };
+    @include respond-to(small-max) {
+      padding-bottom: 15px;
+    }
+
+
+    &-line {
+      top: 0;
+      opacity: 0;
+
+      .active & {
+        transition: all .6s ease-in-out;
+        transition-delay: .2s;
+        opacity: 1;
+      }
+    }
+
+
+    &-text {
+      font: {
+        size: 18px;
+        family: $f-PN_bold;
+      }
+      color: $c-nero;
+      opacity: 0;
+      @include respond-to(small-max) {
+        font-size: 12px;
+      }
+
+
+      .active & {
+        transition: all .6s ease-in-out;
+        transition-delay: .7s;
+        opacity: 1;
+      }
+    }
+
+
+    &-line,
+    &-text {
+      position: absolute;
+    }
+  }
+
+
+  &__img {
+    display: inline-block !important;
+    max-width: 100%;
+  }
+}
+
+
+.more__carousel {
+  .owl {
+    &-stage-outer {
+      margin-bottom: 30px;
+    }
+
+
+    &-nav {
+      position: relative;
+      width: 370px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      @include respond-to(small-max) {
+        margin-top: 30px;
+        width: $w-all;
+      }
+    }
+
+
+    &-prev {
+      left: 0;
+    }
+
+
+    &-next {
+      right: 0;
+    }
+
+
+    &-prev,
+    &-next {
+      position: absolute;
+      top: 0;
+    }
+
+
+    &-dots {
+      width: 370px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      @include respond-to(medium) {
+        margin-top: 60px;
+      }
+      @include respond-to(small-max) {
+        width: $w-all;
+        margin-top: 60px;
+      }
+    }
+
+
+    &-dot {
+      position: relative;
+      margin-left: 10px;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      @include mixinDimensions(20px);
+      border-radius: $w-all;
+      border: 1px solid transparent;
+
+
+      span {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        @include mixinDimensions(8px);
+        border-radius: $w-all;
+        border: 1px solid $c-white;
+        background-color: transparent;
+      }
+
+
+      &.active {
+        border: 1px solid $c-white;
+
+
+        span {
+          background-color: $c-white;
+        }
+      }
+    }
+  }
+}

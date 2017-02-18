@@ -1,0 +1,19 @@
+include ../_mixin/mixin
+
+-
+    var socialArrFooter = [
+        "vk-black",
+        "fb-black"
+    ]
+
+footer.footer
+    .container.clearfix
+
+        img(
+            src="./image/i-logotype-footer.png"
+            alt=""
+            title=""
+            class="img_responsive footer__img"
+        )
+
+        +socialBtn(socialArrFooter, "footer__social")

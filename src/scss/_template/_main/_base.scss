@@ -88,3 +88,68 @@ $f-PN_black         : return-value(fonts, PN_black);
 		left: 0;
 	}
 }
+
+
+.owl {
+	&-prev {
+		@include retina-sprite($sp-i-prev-group);
+		@include respond-to(medium-max) {
+			@include retina-sprite($sp-i-prev-mobile-group);
+		}
+
+
+		&:hover,
+		&:active {
+			@include respond-to(extra-large) {
+				@include retina-sprite($sp-i-prev-h-group);
+			}
+		}
+	}
+	&-next {
+		@include retina-sprite($sp-i-next-group);
+		@include respond-to(medium-max) {
+			@include retina-sprite($sp-i-next-mobile-group);
+		}
+
+
+		&:hover,
+		&:active {
+			@include respond-to(extra-large) {
+				@include retina-sprite($sp-i-next-h-group);
+			}
+		}
+	}
+	&-prev,
+	&-next {
+		font-size: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+
+.social {
+	&__vk {
+		&-black {
+			@include retina-sprite($sp-i-vk-black-group);
+		}
+	}
+	&__fb {
+		&-black {
+			@include retina-sprite($sp-i-fb-black-group);
+		}
+	}
+
+
+	&__fb,
+	&__vk {
+		&-black {
+			display: inline-block;
+			vertical-align: middle;
+			margin: {
+				left: 5px;
+				right: 5px;
+			};
+		}
+	}
+}

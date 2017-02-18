@@ -1,0 +1,43 @@
+include ../_mixin/macrosMixin
+
+
+-
+    var mainTitle = "Доставка</br>и оплата";
+    var delivryList = [
+        "Доставка по всей России",
+        "Срок от 1 до 5 дней",
+        "Оплата при получении либо онлайн"
+    ];
+
+
+section.delivery
+
+    .container
+        .delivery__row.clearfix
+            .delivery__row-left
+
+                +mainTitle(mainTitle)
+
+                ul.delivery__list
+                    -for(var i = 0; i < delivryList.length; i++)
+                        li.delivery__list-item
+                            i.delivery__list-icon
+                            span.delivery__list-text!= delivryList[i]
+
+
+                +btn("delivery__btn", "btn_blue", "Купить")
+
+            .delivery__row-right
+
+                img(
+                    src="./image/img-delivery.png"
+                    alt=""
+                    title=""
+                    class="img_responsive delivery__img"
+                )
+
+    include footer
+
+    .delivery_skew.delivery_skew-0
+    .delivery_skew.delivery_skew-2
+    .delivery_skew.delivery_skew-1

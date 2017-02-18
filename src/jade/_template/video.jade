@@ -12,15 +12,27 @@ section.video
         .video_skew
 
         .container
-            .video__wrap
+            .video__wrap-0
                 iframe(src="https://www.youtube.com/embed/3pHDqucH-Ys" frameborder="0" allowfullscreen)
 
-            +mainTitle(mainTitle)
+            .video__wrap-1
+                +mainTitle(mainTitle)
+
+                p.video__text.video__text-0
+                    span.video__text-wrap!= "Четкая картинка, без</br>бликов и засвечиваний днем"
 
     .video__row.video__row-1
 
         .video_skew
 
         .container.clearfix
-            .video__wrap
+            .video__wrap-0
                 iframe(src="https://www.youtube.com/embed/m5XozId5sPA" frameborder="0" allowfullscreen)
+
+            .video__wrap-1
+                p.video__text.video__text-1
+                    span.video__text-wrap!= "Качественная съемка и</br>полная видимость на дороге</br>ночью"
+
+                .clearfix
+
+                +btn("video__btn", "btn_ruby", "Купить")
