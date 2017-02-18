@@ -27,6 +27,13 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 	&__left {
 		left: 0;
+		@include respond-to(small-max) {
+			padding: {
+				left: 15px;
+				right: 15px;
+				bottom: 15px;
+			};
+		}
 	}
 
 
@@ -40,6 +47,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 		position: absolute;
 		top: 0;
 		@include mixinDimensions(50%, 100%);
+		@include respond-to(small-max) {
+			position: static;
+			width: $w-all;
+		}
 	}
 
 
@@ -47,12 +58,31 @@ $f-PN_black         : return-value(fonts, PN_black);
 		float: right;
 		position: relative;
 		left: 100px;
+		@include respond-to(medium) {
+			top: 100px;
+			left: -100px;
+		}
+		@include respond-to(small-max) {
+			float: none;
+			left: 0;
+			right: 0;
+			margin: {
+				left: auto;
+				right: auto;
+			};
+		}
 	}
 
 
 	&__row {
 		&-right {
 			padding-left: 100px;
+			@include respond-to(large) {
+				padding-left: 20px;
+			}
+			@include respond-to(medium-max) {
+				padding-left: 0;
+			}
 		}
 
 
@@ -60,6 +90,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 		&-right {
 			float: right;
 			width: 50%;
+			@include respond-to(small-max) {
+				float: none;
+				width: $w-all;
+			}
 		}
 	}
 
@@ -93,6 +127,12 @@ $f-PN_black         : return-value(fonts, PN_black);
 		letter-spacing: 2px;
 		line-height: 1;
 		margin-bottom: 15px;
+		@include respond-to(medium) {
+			font-size: 25px;
+		}
+		@include respond-to(small-max) {
+			font-size: 18px;
+		}
 	}
 
 
@@ -100,6 +140,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 		padding: {
 			left: 100px;
 			top: 30px;
+		}
+		@include respond-to(medium-max) {
+			padding-left: 0;
 		}
 
 
@@ -119,6 +162,13 @@ $f-PN_black         : return-value(fonts, PN_black);
 		&-text {
 			font-size: 18px;
 			color: $c-nero;
+			@include respond-to(medium) {
+				font-size: 16px;
+			}
+			@include respond-to(small-max) {
+				font-size: 14px;
+				width: calc(100% - 50px);
+			}
 		}
 
 
@@ -132,5 +182,11 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 	&__btn {
 		display: block;
+		@include respond-to(small-max) {
+			margin: {
+				left: auto;
+				right: auto;
+			};
+		}
 	}
 }

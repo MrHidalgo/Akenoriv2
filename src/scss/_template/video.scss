@@ -20,21 +20,35 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 		top: 100px;
 		bottom: 30px;
 	};
+	@include respond-to(small-max) {
+		padding-top: 40px;
+	}
 
 
 	.main__title {
 		float: left;
 
 		padding-bottom: 100px;
+		@include respond-to(large-max) {
+			display: none;
+		}
 	}
 
 
 	&__row {
 		position: relative;
 		min-height: 500px;
+		@include respond-to(small-max) {
+			min-height: 450px;
+		}
 
 
 		&-0 {
+			@include respond-to(large) {
+				padding-top: 50px;
+			}
+
+
 			.video_skew {
 				background-color: $c-ruby;
 				bottom: -85px;
@@ -45,11 +59,21 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 			.video__wrap {
 				&-1 {
 					padding-left: 50px;
+
+
+					.video__text {
+						@include respond-to(large) {
+							padding-top: 220px;
+						}
+					}
 				}
 
 				&-0,
 				&-1 {
 					float: left;
+					@include respond-to(medium-max) {
+						float: none;
+					}
 				}
 			}
 		}
@@ -70,13 +94,13 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 
 				&-0,
 				&-1 {
-					float: right;
+					float: left;
+					@include respond-to(medium-max) {
+						float: none;
+					}
 				}
 			}
 		}
-
-
-
 	}
 
 
@@ -92,6 +116,15 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 		&-0 {
 			position: relative;
 			@include mixinDimensions(650px, 390px);
+			@include respond-to(large) {
+				@include mixinDimensions(500px, 300px);
+			}
+			@include respond-to(medium-max) {
+				@include mixinDimensions($w-all, 350px);
+			}
+			@include respond-to(extra-small) {
+				height: 250px;
+			}
 
 			iframe {
 				@include mixinDimensions($w-all);
@@ -101,6 +134,12 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 
 		&-1 {
 			width: calc(100% - 650px);
+			@include respond-to(large) {
+				width: calc(100% - 500px);
+			}
+			@include respond-to(medium-max) {
+				width: $w-all;
+			}
 		}
 	}
 
@@ -109,6 +148,12 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 		font-size: 20px;
 		color: $c-white;
 		padding-top: 100px;
+		@include respond-to(medium-max) {
+			padding-top: 25px;
+		}
+		@include respond-to(small-max) {
+			font-size: 16px;
+		}
 
 
 		&-wrap {
@@ -124,6 +169,10 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 		}
 		&-1 {
 			float: right;
+			@include respond-to(medium-max) {
+				float: none;
+				margin-bottom: 25px;
+			}
 
 
 			&::after {
@@ -148,5 +197,36 @@ $c-dodger-blue  : return-value(color, dodger-blue);
 	&__btn {
 		display: block;
 		margin-top: 40px;
+
+		&.video__btn-hide {
+			display: none;
+		}
+		@include respond-to(medium-max) {
+			display: none;
+
+			&.video__btn-hide {
+				display: block;
+				margin: {
+					top: 25px;
+					left: auto;
+					right: auto;
+				}
+			}
+		}
+	}
+
+
+	&__title-wrap {
+		display: none;
+		@include respond-to(large-max) {
+			display: block;
+		}
+
+		.main__title {
+			@include respond-to(large-max) {
+				display: block;
+				padding-bottom: 25px;
+			}
+		}
 	}
 }

@@ -18,16 +18,17 @@
 
 section.list
     .list__row.list__row-0.list__row_ruby
-        img(
-            src="./image/img-list-0.png"
-            alt=""
-            title=""
-            class="img_responsive list__img"
-        )
 
         .list_skew
 
         .container.clearfix
+            img(
+                src="./image/img-list-0.png"
+                alt=""
+                title=""
+                class="img_responsive list__img"
+            )
+
             p.list__number!= "01"
 
             .list__wrap
@@ -51,6 +52,8 @@ section.list
 
     .list__row.list__row-2.list__row_white
         .list_skew
+
+        .container
             img(
                 src="./image/img-list-2.png"
                 alt=""
@@ -58,7 +61,6 @@ section.list
                 class="img_responsive list__img"
             )
 
-        .container
             p.list__number!= "03"
             .list__wrap
                 p.list__title!= listTitle[2]
@@ -81,14 +83,16 @@ section.list
 
     .list__row.list__row-4.list__row_blue
         .list_skew
-            img(
-                src="./image/img-list-4.png"
-                alt=""
-                title=""
-                class="img_responsive list__img"
-            )
 
         .container
+            .list_skew
+                img(
+                    src="./image/img-list-4.png"
+                    alt=""
+                    title=""
+                    class="img_responsive list__img"
+                )
+
             p.list__number!= "05"
             .list__wrap
                 p.list__title!= listTitle[4]

@@ -31,6 +31,11 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 	text-transform: uppercase;
 	text-align: center;
+	@include respond-to(small-max) {
+		font-size: 18px;
+		@include mixinDimensions(240px, 55px);
+		line-height: 55px;
+	}
 
 
 	&__text {
@@ -77,6 +82,12 @@ $f-PN_black         : return-value(fonts, PN_black);
 	letter-spacing: 3px;
 	text-transform: uppercase;
 	padding-top: 50px;
+	@include respond-to(medium) {
+		font-size: 25px;
+	}
+	@include respond-to(small-max) {
+		font-size: 20px;
+	}
 
 
 	&:before {

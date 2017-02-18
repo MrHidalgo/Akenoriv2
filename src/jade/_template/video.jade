@@ -7,11 +7,16 @@ include ../_mixin/macrosMixin
 
 section.video
 
+    .container.clearfix
+        .video__title-wrap
+            +mainTitle(mainTitle)
+
     .video__row.video__row-0
 
         .video_skew
 
-        .container
+        .container.clearfix
+
             .video__wrap-0
                 iframe(src="https://www.youtube.com/embed/3pHDqucH-Ys" frameborder="0" allowfullscreen)
 
@@ -26,8 +31,6 @@ section.video
         .video_skew
 
         .container.clearfix
-            .video__wrap-0
-                iframe(src="https://www.youtube.com/embed/m5XozId5sPA" frameborder="0" allowfullscreen)
 
             .video__wrap-1
                 p.video__text.video__text-1
@@ -36,3 +39,8 @@ section.video
                 .clearfix
 
                 +btn("video__btn", "btn_ruby", "Купить")
+
+            .video__wrap-0
+                iframe(src="https://www.youtube.com/embed/m5XozId5sPA" frameborder="0" allowfullscreen)
+
+            +btn("video__btn video__btn-hide", "btn_ruby", "Купить")

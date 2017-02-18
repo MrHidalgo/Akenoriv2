@@ -22,12 +22,22 @@ $f-PN_bold          : return-value(fonts, PN_bold);
     top: 200px;
     bottom: 100px;
   }
+  @include respond-to(small-max) {
+    padding: {
+      top: 100px;
+      bottom: 0;
+    }
+  }
 
 
   &__left,
   &__right {
     float: left;
     width: 50%;
+    @include respond-to(small-max) {
+      float: none;
+      width: $w-all;
+    }
   }
 
 
@@ -70,5 +80,12 @@ $f-PN_bold          : return-value(fonts, PN_bold);
       family: $f-PN_bold;
     }
     color: $c-nero;
+    @include respond-to(medium) {
+      font-size: 25px;
+    }
+    @include respond-to(small-max) {
+      font-size: 20px;
+      padding-bottom: 30px;
+    }
   }
 }

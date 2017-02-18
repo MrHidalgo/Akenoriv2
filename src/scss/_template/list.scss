@@ -20,21 +20,39 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 /// MAIN
 ///
 .list {
-
+  overflow: hidden;
 
   &__row {
     position: relative;
     min-height: 450px;
+    @include respond-to(small-max) {
+      min-height: 500px;
+    }
 
 
     &-0 {
       .list__number {
         top: 20px;
         left: 400px;
+        @include respond-to(medium) {
+          left: 250px;
+        }
+        @include respond-to(small-max) {
+          top: 50px;
+          left: 100px;
+        }
       }
       .list__img {
-        top: 50px;
-        left: 150px;
+        top: 30px;
+        left: -100px;
+        @include respond-to(medium) {
+          left: -170px;
+        }
+        @include respond-to(small-max) {
+          top: 120px;
+          left: -150px;
+          width: 280px;
+        }
       }
       .list__wrap {
         padding-top: 150px;
@@ -42,8 +60,11 @@ $f-PN_bold          : return-value(fonts, PN_bold);
     }
     &-1 {
       .list__number {
-        top: -70px;
+        top: -80px;
         left: 15px;
+        @include respond-to(medium) {
+          top: -90px;
+        }
       }
       .list_skew {
         overflow: hidden;
@@ -51,19 +72,47 @@ $f-PN_bold          : return-value(fonts, PN_bold);
       .list__img {
         top: -50px;
         right: 150px;
+        @include respond-to(medium) {
+          right: -100px;
+        }
+        @include respond-to(small-max) {
+          top: 110px;
+          right: -70px;
+          width: 250px;
+        }
       }
       .list__wrap {
         padding-top: 60px;
+        @include respond-to(medium-max) {
+          padding-top: 0;
+        }
+        @include respond-to(small-max) {
+          width: 70%;
+        }
       }
     }
     &-2 {
       .list__number {
-        top: -100px;
+        top: -110px;
         left: 400px;
         color: $c-white;
+        @include respond-to(medium) {
+          top: -100px;
+          left: 150px;
+        }
+        @include respond-to(small-max) {
+          top: -90px;
+          left: 100px;
+        }
       }
       .list__img {
-        left: 450px;
+        left: 100px;
+        @include respond-to(medium) {
+          left: 0;
+        }
+        @include respond-to(small-max) {
+          left: -120px;
+        }
       }
       .list__title,
       .list__text {
@@ -71,12 +120,21 @@ $f-PN_bold          : return-value(fonts, PN_bold);
       }
       .list__wrap {
         padding-top: 40px;
+        @include respond-to(medium) {
+          padding-top: 20px;
+        }
       }
     }
     &-3 {
       .list__number {
         top: -10px;
         left: 15px;
+        @include respond-to(medium) {
+          top: 5px;
+        }
+        @include respond-to(small-max) {
+          top: 40px;
+        }
       }
       .list_skew {
         overflow: hidden;
@@ -84,24 +142,52 @@ $f-PN_bold          : return-value(fonts, PN_bold);
       .list__img {
         top: -50px;
         right: 100px;
+        @include respond-to(medium-max) {
+          right: -200px;
+        }
+        @include respond-to(small-max) {
+          top: 170px;
+        }
       }
       .list__wrap {
         padding-top: 120px;
+        @include respond-to(medium) {
+          padding-top: 80px;
+        }
+        @include respond-to(small-max) {
+          width: 70%;
+          padding-top: 100px;
+        }
       }
     }
     &-4 {
       .list__number {
         top: -100px;
         left: 400px;
+        @include respond-to(medium) {
+          top: -120px;
+        }
+        @include respond-to(small-max) {
+          left: 220px;
+        }
       }
       .list_skew {
         overflow: hidden;
       }
       .list__img {
-        left: 300px;
+        top: -100px;
+        left: 0;
+        @include respond-to(small-max) {
+          top: 170px;
+          left: -30px;
+          width: 270px;
+        }
       }
       .list__wrap {
         padding-top: 50px;
+        @include respond-to(medium-max) {
+          padding-top: 0;
+        }
       }
     }
 
@@ -112,6 +198,13 @@ $f-PN_bold          : return-value(fonts, PN_bold);
       .list__wrap {
         position: relative;
         left: 400px;
+        @include respond-to(medium) {
+          left: 270px;
+        }
+        @include respond-to(small-max) {
+          left: 120px;
+          width: calc(100% - 120px);
+        }
       }
     }
 
@@ -148,11 +241,21 @@ $f-PN_bold          : return-value(fonts, PN_bold);
         transform: skewY(-4deg);
         background-color: $c-dodger-blue;
       }
+
+      .container {
+        .list_skew {
+          min-height: 400px;
+          @include respond-to(small-max) {
+            min-height: 500px;
+          }
+        }
+      }
     }
 
 
     &_white {
       min-height: 250px;
+      z-index: 0;
 
 
       .list__number {
@@ -163,6 +266,8 @@ $f-PN_bold          : return-value(fonts, PN_bold);
       .list_skew {
         transform: skewY(-4deg);
         background-color: $c-white;
+
+
       }
     }
   }
@@ -185,6 +290,9 @@ $f-PN_bold          : return-value(fonts, PN_bold);
       family: $f-PN_black;
     }
     line-height: 1;
+    @include respond-to(small-max) {
+      font-size: 35px;
+    }
   }
 
 
@@ -201,12 +309,25 @@ $f-PN_bold          : return-value(fonts, PN_bold);
       family: $f-PN_bold;
     }
     line-height: 1.2;
+    letter-spacing: 2px;
     padding-bottom: 40px;
+    @include respond-to(medium) {
+      font-size: 25px;
+    }
+    @include respond-to(small-max) {
+      font-size: 18px;
+    }
   }
 
 
   &__text {
     font-size: 18px;
+    @include respond-to(medium) {
+      font-size: 16px;
+    }
+    @include respond-to(small-max) {
+      font-size: 14px;
+    }
   }
 
 
@@ -214,5 +335,8 @@ $f-PN_bold          : return-value(fonts, PN_bold);
   &__text {
     width: 60%;
     color: $c-white;
+    @include respond-to(small-max) {
+      width: 100%;
+    }
   }
 }

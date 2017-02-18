@@ -26,6 +26,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 		@include respond-to(medium) {
 			min-height: 270px;
 		}
+		@include respond-to(small-max) {
+			min-height: 220px;
+		}
 
 
 		&_ruby {
@@ -49,6 +52,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 				z-index: 15;
 				transform: skewY(-4deg);
 				background-color: $c-dodger-blue;
+				@include respond-to(small-max) {
+					top: 0;
+				}
 			}
 		}
 	}
@@ -69,6 +75,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 			position: absolute;
 			top: 30px;
 			right: -30px;
+			@include respond-to(small-max) {
+				display: none;
+			}
 		}
 
 
@@ -76,11 +85,19 @@ $f-PN_black         : return-value(fonts, PN_black);
 			position: absolute;
 			z-index: 0;
 			right: 0;
+			@include respond-to(medium-max) {
+				display: none;
+			}
 		}
 
 
 		&-0 {
 			float: left;
+			@include respond-to(small-max) {
+				position: absolute;
+				left: -50px;
+				width: 220px;
+			}
 		}
 	}
 
@@ -97,6 +114,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 			}
 			line-height: 1;
 			transform: rotate(3deg);
+			@include respond-to(small-max) {
+				float: right;
+			}
 		}
 
 
@@ -107,7 +127,11 @@ $f-PN_black         : return-value(fonts, PN_black);
 				family: $f-PN_light;
 			}
 			line-height: 1.1;
+			text-transform: uppercase;
 			transform: rotate(-4.2deg);
+			@include respond-to(small-max) {
+				padding-top: 30px;
+			}
 
 
 			&_bold {
@@ -126,6 +150,23 @@ $f-PN_black         : return-value(fonts, PN_black);
 				font-size: 35px;
 			}
 		}
+
+
+		&-0 {
+			@include respond-to(small-max) {
+				font-size: 20px;
+			}
+		}
+
+
+		&-1 {
+			@include respond-to(small-max) {
+				br {
+					display: inline-block;
+				}
+				font-size: 23px;
+			}
+		}
 	}
 
 
@@ -136,6 +177,15 @@ $f-PN_black         : return-value(fonts, PN_black);
 		z-index: 15;
 		@include respond-to(medium-max) {
 			right: 15px;
+		}
+		@include respond-to(small-max) {
+			bottom: -90px;
+			left: 0;
+			right: 0;
+			margin: {
+				left: auto;
+				right: auto;
+			};
 		}
 	}
 }
