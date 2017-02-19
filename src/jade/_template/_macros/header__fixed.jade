@@ -1,2 +1,14 @@
+include ../../_mixin/mixin
 
-.header__fixed
+-
+    var socialArr = [
+        "vk",
+        "fb"
+    ];
+
+.header__fixed.animated
+    .container.clearfix
+
+        +socialBtn(socialArr, "header__fixed-social")
+
+        +btnMenuBurger("header__fixed-burger")

@@ -1,11 +1,35 @@
+function scrollWindowNavigationFixedLarge() {
+    var countScroll = $(window).scrollTop(),
+        navigationBlock = $('.header__fixed'),
+        body = $("body");
+
+    if (countScroll > 150) {
+        body.addClass("fixed");
+        navigationBlock.addClass("slideInDown");
+    } else {
+        body.removeClass("fixed");
+        navigationBlock.removeClass("slideInDown");
+    }
+}
+
+
+$(window).on("load resize ready scroll", function(){
+    if($(window).width() > '1024') {
+        scrollWindowNavigationFixedLarge();
+    } else {
+        $("body").removeClass("fixed");
+        $('.header__fixed').removeClass("slideInDown");
+    }
+});
+
+
 $(document).ready(function() {
-
-
     /* BTN BURGER */
     $(".btn-menu_js").on("click", function() {
         $(this).toggleClass("active");
         $(".nav").slideToggle(300);
-        // $("body").toggleClass("open-menu");
+        $(".header__top").toggleClass("active");
+        $("body").toggleClass("open-menu");
     });
 
 

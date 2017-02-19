@@ -11,7 +11,56 @@
 ///
 $w-all              : return-value(dimension, all);
 
-$c-white			      : return-value(color, white);
+$c-white			: return-value(color, white);
+$c-dodger-blue      : return-value(color, dodger-blue);
 ///
 /// MAIN
 ///
+.header {
+  &__fixed {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: $w-all;
+    height: 112px;
+    background-color: $c-dodger-blue;
+    @include respond-to(small-max) {
+      height: 50px;
+    }
+
+
+    .fixed & {
+      display: block;
+    }
+
+
+    &-social {
+      float: left;
+    }
+
+
+    &-burger {
+      float: right;
+
+
+      .btn-menu__line {
+        background-color: $c-white;
+      }
+    }
+
+
+    &-social,
+    &-burger {
+      position: relative;
+      z-index: 15;
+      margin: {
+        top: 45px;
+      };
+      @include respond-to(small-max) {
+        margin-top: 13px;
+      }
+    }
+  }
+}

@@ -17,12 +17,17 @@ $c-dodger-blue      : return-value(color, dodger-blue);
 /// MAIN
 ///
 .header {
-
 	&__top {
 		position: relative;
 		height: 112px;
 		@include respond-to(small-max) {
 			height: 50px;
+		}
+
+
+		&.active {
+			background-color: $c-dodger-blue;
+			transition: all .3s ease-in-out;
 		}
 
 
@@ -55,29 +60,6 @@ $c-dodger-blue      : return-value(color, dodger-blue);
 
 		&-burger {
 			float: right;
-
-
-			&:before {
-				@include respond-to(medium-min) {
-					content: "";
-					opacity: 0;
-					position: absolute;
-					width: 100px;
-					height: 85px;
-					top: -30px;
-					left: -35px;
-					background-color: $c-dodger-blue;
-					transition: all .3s ease-in-out;
-				}
-			}
-
-
-			&.active {
-				&:before {
-					opacity: 1;
-					transition: all .3s ease-in-out;
-				}
-			}
 		}
 
 
@@ -86,7 +68,7 @@ $c-dodger-blue      : return-value(color, dodger-blue);
 			position: relative;
 			z-index: 15;
 			margin: {
-				top: 35px;
+				top: 45px;
 			};
 			@include respond-to(small-max) {
 				margin-top: 13px;
@@ -111,6 +93,11 @@ $c-dodger-blue      : return-value(color, dodger-blue);
 			}
 
 
+			.active & {
+				display: none;
+			}
+
+
 			&_bg {
 				position: absolute;
 				z-index: 0;
@@ -123,6 +110,11 @@ $c-dodger-blue      : return-value(color, dodger-blue);
 				};
 				@include respond-to(small-max) {
 					width: 180px;
+				}
+
+
+				.active & {
+					display: none;
 				}
 			}
 		}

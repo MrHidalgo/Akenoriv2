@@ -162,12 +162,12 @@ $f-PN_black         : return-value(fonts, PN_black);
 		&-text {
 			font-size: 18px;
 			color: $c-nero;
+			width: calc(100% - 50px);
 			@include respond-to(medium) {
 				font-size: 16px;
 			}
 			@include respond-to(small-max) {
 				font-size: 14px;
-				width: calc(100% - 50px);
 			}
 		}
 
