@@ -126,4 +126,35 @@ $(document).ready(function() {
             $(".modal").fadeOut(300);
         }
     });
+
+
+    /* SMOOTH SCROLL */
+    $(".nav a[data-link='nav__btn']").on("click", function (e) {
+        e.preventDefault();
+
+        var id          = $(this).attr('href'),
+            navHeight   = $(".header__fixed").outerHeight();
+
+        $(".btn-menu_js").removeClass("active");
+        $(".nav").slideUp(300);
+        $(".header__top").removeClass("active");
+        $("body").removeClass("open-menu");
+
+        if(id === "#top") {
+            $('body, html').animate({
+                scrollTop: 0
+            }, 1000);
+        } else {
+            var top;
+            if($(window).width() > '1024') {
+                top = $(id).offset().top - navHeight;
+            } else {
+                top = $(id).offset().top;
+            }
+
+            $('body, html').animate({
+                scrollTop: top
+            }, 1000);
+        }
+    });
 });
