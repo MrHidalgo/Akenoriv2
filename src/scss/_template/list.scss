@@ -178,7 +178,7 @@ $f-PN_bold          : return-value(fonts, PN_bold);
         top: -100px;
         left: 0;
         @include respond-to(small-max) {
-          top: 170px;
+          top: 220px;
           left: -30px;
           width: 270px;
         }
@@ -213,6 +213,9 @@ $f-PN_bold          : return-value(fonts, PN_bold);
     &-2,
     &-4 {
       min-height: 400px;
+	    @include respond-to(small-max) {
+		    min-height: 500px;
+	    }
     }
 
 

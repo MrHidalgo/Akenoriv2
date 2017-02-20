@@ -80,7 +80,7 @@ $c-dodger-blue		: return-value(color, dodger-blue);
       max-width: 100%;
       top: auto;
       bottom: 0;
-      left: 100px;
+      left: 130px;
     }
   }
 
@@ -105,6 +105,8 @@ $c-dodger-blue		: return-value(color, dodger-blue);
       top: 50px;
     }
     @include respond-to(small-max) {
+	    position: relative;
+	    z-index: 10;
       width: 70%;
     }
 
@@ -167,7 +169,7 @@ $c-dodger-blue		: return-value(color, dodger-blue);
       }
     }
     &-2 {
-      height: 80px;
+      height: 70px;
       background-color: $c-white;
     }
   }
