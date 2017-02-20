@@ -22,8 +22,6 @@ html {
 html,
 body {
 	width: $w-all;
-	height: $w-all;
-	min-height: $w-all;
 	@include respond-to(large-max) {
 		overflow-x: hidden;
 	}
@@ -49,28 +47,22 @@ body{
 	background-color: #f6f6f6;
 
 	overflow-x: hidden;
-
-	&.open-menu,
-	&.open-popup {
-		overflow: hidden;
-	}
-
-	&.fixed {
-		//padding-top: 140px;
-		@include respond-to(hard-max) {
-			//padding-top: 100px;
-		}
-	}
 }
 
+
+.open-menu,
+.open-popup {
+	overflow: hidden;
+}
 @media only screen and(max-width: 1024px) {
-	body.open-menu {
+	.open-menu {
 		position: fixed;
 		top: 0;
 		left: 0;
 		height: 100%;
 	}
 }
+
 
 * {
 	box-sizing: border-box;

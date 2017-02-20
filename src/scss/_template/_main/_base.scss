@@ -31,6 +31,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 	text-transform: uppercase;
 	text-align: center;
+	transition: all .3s ease-in-out;
 	@include respond-to(small-max) {
 		font-size: 18px;
 		@include mixinDimensions(240px, 55px);
@@ -62,11 +63,35 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 	&_ruby {
 		background-color: $c-ruby;
+
+
+		&:hover {
+			background-color: lighten($c-ruby, 5%);
+		}
 	}
 
 
 	&_blue {
 		background-color: $c-dodger-blue;
+
+
+		&:hover {
+			background-color: lighten($c-dodger-blue, 5%);
+		}
+	}
+
+
+	&_ruby,
+	&_blue {
+		&:active {
+			box-shadow: none;
+		}
+
+
+		&:hover,
+		&:active {
+			transition: all .3s ease-in-out;
+		}
 	}
 }
 
@@ -112,7 +137,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 		&:hover,
 		&:active {
 			@include respond-to(extra-large) {
-				@include retina-sprite($sp-i-prev-h-group);
+				//@include retina-sprite($sp-i-prev-h-group);
 			}
 		}
 	}
@@ -126,7 +151,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 		&:hover,
 		&:active {
 			@include respond-to(extra-large) {
-				@include retina-sprite($sp-i-next-h-group);
+				//@include retina-sprite($sp-i-next-h-group);
 			}
 		}
 	}
@@ -163,4 +188,19 @@ $f-PN_black         : return-value(fonts, PN_black);
 			};
 		}
 	}
+}
+
+
+input[type="checkbox"],
+input[type="radio"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	border: none;
+	margin: 0;
+	padding: 0;
+	filter: alpha(opacity=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	outline: 0;
 }

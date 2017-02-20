@@ -13,6 +13,25 @@ function scrollWindowNavigationFixedLarge() {
 }
 
 
+function checkboxInit() {
+    $(".checkbox__btn").click(function(e) {
+        e.preventDefault();
+
+        var inputCheckbox = $(this).find('input');
+        if ($(this).hasClass('disabled')){
+            return false;
+        }
+        $(this).toggleClass('active');
+        if(inputCheckbox.prop('checked') == true){
+            inputCheckbox.prop('checked', false).change();
+        } else {
+            inputCheckbox.prop('checked', true).change();
+        }
+        return false;
+    });
+}
+
+
 $(window).on("load resize ready scroll", function(){
     if($(window).width() > '1024') {
         scrollWindowNavigationFixedLarge();
@@ -24,6 +43,19 @@ $(window).on("load resize ready scroll", function(){
 
 
 $(document).ready(function() {
+    /* FUNCTION */
+    checkboxInit();
+
+
+    if(navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+        $(document).on('blur', 'input, textarea', function () {
+            setTimeout(function () {
+                window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
+            }, 0);
+        });
+    }
+
+
     /* BTN BURGER */
     $(".btn-menu_js").on("click", function() {
         $(this).toggleClass("active");
@@ -71,5 +103,27 @@ $(document).ready(function() {
         loop: true,
         dots: true,
         nav:true
+    });
+
+
+    /* MODAL */
+    var modalBtn = ".advantages__btn, .video__btn, .delivery__btn";
+    $(modalBtn).on("click", function(e) {
+        e.preventDefault();
+
+        $("body, html").addClass("open-popup");
+        $(".modal").fadeIn(300);
+    });
+    $(".btn-close").on("click", function(e) {
+        e.preventDefault();
+
+        $("body, html").removeClass("open-popup");
+        $(".modal").fadeOut(300);
+    });
+    $(document).on("keyup", function(e) {
+        if (e.keyCode == 27) {
+            $("body, html").removeClass("open-popup");
+            $(".modal").fadeOut(300);
+        }
     });
 });
